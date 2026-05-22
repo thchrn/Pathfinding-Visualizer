@@ -24,15 +24,15 @@ export async function verticalDivision({
   setIsDisabled: (isDisabled: boolean) => void;
   speed: SpeedType;
 }) {
-  const makeWallAt = col + getRandInt(0, width - 1) * 2 + 1
-  const makePassageAt = row + getRandInt(0, height) * 2
+  const makeWallAt = col + getRandInt(0, width - 1) * 2 + 1;
+  const makePassageAt = row + getRandInt(0, height - 1) * 2; // fix: was (0, height)
 
   for (let i = 0; i < 2 * height - 1; i++) {
     if (makePassageAt !== row + i) {
       if (!isEqual(grid[row + i][makeWallAt], startTile) &&
           !isEqual(grid[row + i][makeWallAt], endTile)) {
 
-        grid[row + i][makeWallAt].isWall = true
+        grid[row + i][makeWallAt].isWall = true;
 
         document.getElementById(`${row + i}-${makeWallAt}`)!.className =
           `${WALL_TILE_STYLE} animate-wall`

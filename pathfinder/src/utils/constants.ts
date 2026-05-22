@@ -49,7 +49,6 @@ export const PATHFINDING_ALGORITHMS: AlgorithmSelectType[] = [
   { name: "A* Search", value: "A*" },
   { name: "Breadth-First Search", value: "BFS" },
   { name: "Depth-First Search", value: "DFS" },
-  { name: "Greedy Best-First Search", value: "Greedy Best-First Search" },
 ];
 
 export const SPEEDS: SpeedSelectType[] = [

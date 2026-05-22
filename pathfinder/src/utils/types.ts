@@ -1,4 +1,4 @@
-export type AlgorithmType = 'Dijkstra' | 'A*' | 'BFS' | 'DFS' | 'Greedy Best-First Search';
+export type AlgorithmType = 'Dijkstra' | 'A*' | 'BFS' | 'DFS' ;
 export type MazeType = 'NONE' | 'Binary Tree' | 'Recursive Division' ;
 
 export interface AlgorithmSelectType{

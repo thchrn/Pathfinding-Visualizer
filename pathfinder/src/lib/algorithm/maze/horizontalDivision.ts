@@ -26,7 +26,7 @@ export async function horizontalDivision({
 }) {
 
   const makeWallAt = row + getRandInt(0, height - 1) * 2 + 1;
-  const makePassageAt = col + getRandInt(0, width) * 2;
+  const makePassageAt = col + getRandInt(0, width - 1) * 2; // fix: was (0, width)
 
   for (let i = 0; i < 2 * width - 1; i++) {
 
