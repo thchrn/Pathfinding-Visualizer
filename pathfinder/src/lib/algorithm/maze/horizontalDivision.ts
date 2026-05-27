@@ -25,6 +25,8 @@ export async function horizontalDivision({
   speed: SpeedType
 }) {
 
+  if (height <= 0 || width <= 0) return;
+
   const makeWallAt = row + getRandInt(0, height - 1) * 2 + 1;
   const makePassageAt = col + getRandInt(0, width - 1) * 2; // fix: was (0, width)
 
@@ -50,13 +52,16 @@ export async function horizontalDivision({
     }
   }
 
+  const topHeight = Math.floor((makeWallAt - row) / 2);
+  const bottomHeight = height - topHeight - 1;
+
   await recursiveDivision({
     grid,
     startTile,
     endTile,
     row,
     col,
-    height: (makeWallAt - row + 1) / 2,
+    height: topHeight,
     width,
     setIsDisabled,
     speed,
@@ -68,7 +73,7 @@ export async function horizontalDivision({
     endTile,
     row: makeWallAt + 1,
     col,
-    height: height - (makeWallAt - row + 1) / 2,
+    height: bottomHeight,
     width,
     setIsDisabled,
     speed,

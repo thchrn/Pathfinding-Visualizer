@@ -24,6 +24,8 @@ export async function verticalDivision({
   setIsDisabled: (isDisabled: boolean) => void;
   speed: SpeedType;
 }) {
+
+  if (height <= 0 || width <= 0) return;
   const makeWallAt = col + getRandInt(0, width - 1) * 2 + 1;
   const makePassageAt = row + getRandInt(0, height - 1) * 2; // fix: was (0, height)
 
@@ -42,6 +44,9 @@ export async function verticalDivision({
     }
   }
 
+  const leftWidth = Math.floor((makeWallAt - col) / 2);
+  const rightWidth = width - leftWidth - 1;
+
   await recursiveDivision({
     grid,
     startTile,
@@ -49,20 +54,20 @@ export async function verticalDivision({
     row,
     col,
     height,
-    width: (makeWallAt - col + 1) / 2,
+    width: leftWidth,
     setIsDisabled,
     speed,
-   })
+  })
 
-   await recursiveDivision({
+  await recursiveDivision({
     grid,
     startTile,
     endTile,
     row,
     col: makeWallAt + 1,
     height,
-    width: width - (makeWallAt - col + 1) / 2,
+    width: rightWidth,
     setIsDisabled,
     speed,
-   })
+  })
 }
