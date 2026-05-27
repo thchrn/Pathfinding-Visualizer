@@ -6,6 +6,8 @@ Pathfinding Visualizer is an interactive, browser-based tool that animates how g
 
 The project sits in the `pathfinder/` subdirectory of the repository and runs as a standard Next.js web application.
 
+**Live Demo:** [https://pathfinding-visualizer-cyan-three.vercel.app](https://pathfinding-visualizer-cyan-three.vercel.app)
+
 ---
 
 ## What It Does
