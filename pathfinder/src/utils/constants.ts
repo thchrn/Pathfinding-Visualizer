@@ -42,6 +42,7 @@ export const MAZES: MazeSelectType[] = [
   { name: "NONE", value: "NONE" },
   { name: "Binary Tree", value: "Binary Tree" },
   { name: "Recursive Division", value: "Recursive Division" },
+  { name: "Prim's", value: "Prim's" },
 ];
 
 export const PATHFINDING_ALGORITHMS: AlgorithmSelectType[] = [
@@ -49,6 +50,8 @@ export const PATHFINDING_ALGORITHMS: AlgorithmSelectType[] = [
   { name: "A* Search", value: "A*" },
   { name: "Breadth-First Search", value: "BFS" },
   { name: "Depth-First Search", value: "DFS" },
+  { name: "Greedy Best-First Search", value: "Greedy Best-First Search" },
+  { name: "Bidirectional BFS", value: "Bidirectional BFS" },
 ];
 
 export const SPEEDS: SpeedSelectType[] = [

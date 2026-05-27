@@ -97,7 +97,7 @@ export function Nav({
         // =========================
         const startTime = performance.now();
 
-        const {traversedTile, path} = runPathfindingAlgorithm({
+        const {traversedTiles, path} = runPathfindingAlgorithm({
             algorithm,
             grid,
             startTile,
@@ -114,12 +114,12 @@ export function Nav({
         // =========================
         setStats({
             time: endTime - startTime,
-            visited: traversedTile.length,
+            visited: traversedTiles.length,
             pathLength: path.length,
         });
 
         animatePath(
-            traversedTile,
+            traversedTiles,
             path,
             startTile,
             endTile,
@@ -143,7 +143,7 @@ export function Nav({
             isVisualizationRunningRef.current = false;
 
         }, (
-            SLEEP_TIME * (traversedTile.length + SLEEP_TIME * 2 ) +
+            SLEEP_TIME * (traversedTiles.length + SLEEP_TIME * 2 ) +
             EXTENDED_SLEEP_TIME * (path.length + 60) *
             SPEEDS.find((s) => s.value === speed)!.value
         ));

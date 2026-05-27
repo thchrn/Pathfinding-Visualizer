@@ -3,7 +3,7 @@ import { isEqual, checkStack } from "../../../utils/helpers"
 import type { GridType, TileType } from "../../../utils/types"
 
 export const dfs = (grid: GridType, startTile: TileType, endTile: TileType) => {
-  const traversedTile = []
+  const traversedTiles = []
   const base = grid[startTile.row][startTile.col]
   base.distance = 0
   base.isTraversed = true
@@ -15,7 +15,7 @@ export const dfs = (grid: GridType, startTile: TileType, endTile: TileType) => {
       if (currentTile.isWall) continue
       if (currentTile.distance === Infinity) break
       currentTile.isTraversed = true
-      traversedTile.push(currentTile)
+      traversedTiles.push(currentTile)
       if (isEqual(currentTile, endTile)) break
       const neighbors = getUntraversedNeighbors(grid, currentTile)
       for (let i = 0; i < neighbors.length; i++) {
@@ -36,5 +36,5 @@ export const dfs = (grid: GridType, startTile: TileType, endTile: TileType) => {
     current = current.parent!
   }
 
-  return { traversedTile, path }
+  return { traversedTiles, path }
 }

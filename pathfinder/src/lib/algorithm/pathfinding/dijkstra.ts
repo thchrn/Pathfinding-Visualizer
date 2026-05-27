@@ -7,7 +7,7 @@ export const dijkstra = (
   startTile: TileType,
   endTile: TileType
 ) => {
-  const traversedTile = []
+  const traversedTiles = []
   const base = grid[startTile.row][startTile.col]
   base.distance = 0
   base.isTraversed = true
@@ -20,7 +20,7 @@ export const dijkstra = (
       if (currentTile.isWall) continue
       if (currentTile.distance === Infinity) break
       currentTile.isTraversed = true
-      traversedTile.push(currentTile)
+      traversedTiles.push(currentTile)
       if (isEqual(currentTile, endTile)) break
       const neighbors = getUntraversedNeighbors(grid, currentTile)
       for (let i = 0; i < neighbors.length; i++) {
@@ -42,5 +42,5 @@ export const dijkstra = (
         current = current.parent!
     }
 
-    return { traversedTile, path }
+    return { traversedTiles, path }
 }

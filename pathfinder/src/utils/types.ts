@@ -1,5 +1,5 @@
-export type AlgorithmType = 'Dijkstra' | 'A*' | 'BFS' | 'DFS' ;
-export type MazeType = 'NONE' | 'Binary Tree' | 'Recursive Division' ;
+export type AlgorithmType = 'Dijkstra' | 'A*' | 'BFS' | 'DFS' | 'Greedy Best-First Search' | 'Bidirectional BFS';
+export type MazeType = 'NONE' | 'Binary Tree' | 'Recursive Division' | "Prim's";
 
 export interface AlgorithmSelectType{
     name : string;

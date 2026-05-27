@@ -11,7 +11,7 @@ export const astar = (
   startTile: TileType,
   endTile: TileType
 ) => {
-  const traversedTile = [];
+  const traversedTiles = [];
   const heuristicCost = initHeuristicCost(grid, endTile);
   const functionCost = initFunctionCost();
 
@@ -40,7 +40,7 @@ export const astar = (
       if (currentTile.distance === Infinity) break;
 
       currentTile.isTraversed = true;
-      traversedTile.push(currentTile);
+      traversedTiles.push(currentTile);
 
       if (isEqual(currentTile, endTile)) break;
 
@@ -70,5 +70,5 @@ export const astar = (
     current = current.parent;
   }
 
-  return { traversedTile, path };
+  return { traversedTiles, path };
 };
