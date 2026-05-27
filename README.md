@@ -1,4 +1,5 @@
 # Pathfinding Visualizer 
+
 ## What Is It?
 
 Pathfinding Visualizer is an interactive, browser-based tool that animates how graph traversal and shortest-path algorithms navigate through a grid in real time. Built with **Next.js**, **TypeScript**, and **Tailwind CSS**, it lets users watch algorithms "think" — exploring cells, marking visited nodes, and tracing the final path — making abstract CS concepts tangible and easy to understand.
@@ -20,6 +21,7 @@ Five algorithms are implemented, each with different characteristics:
 | A\* Search | Yes | Yes |
 | Depth-First Search (DFS) | No | No |
 | Greedy Best-First Search | Yes | No |
+| Bidirectional BFS | No | Yes |
 
 Weighted algorithms respect cell costs; unweighted treat all moves as equal. Algorithms that guarantee the shortest path will always find the optimal route — others may find *a* path, but not necessarily the best one.
 
@@ -29,6 +31,7 @@ Two procedural maze generation algorithms are available to auto-populate the gri
 
 - **Recursive Division** — recursively splits the grid into chambers, carving passages at random points to create interconnected, winding mazes.
 - **Binary Tree** — carves paths through the grid using binary tree logic, producing a different pattern each time.
+- **Prim's Algorithm** — grows a maze from a single cell by randomly expanding the frontier, producing organic, natural-looking mazes.
 
 ### Interactive Grid
 
@@ -107,16 +110,6 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 3. **Choose a speed** (Slow / Medium / Fast) from the Speed dropdown.
 4. **Press Play** — the algorithm will animate from the green start tile to the red end tile.
 5. Press **Play Again** to re-run on the same grid, or pick a new maze to start fresh.
-
----
-
-## Planned / In-Progress Features
-
-Per the repository notes, the following are planned additions:
-
-- **Prim's Maze** generation algorithm
-- **Greedy Best-First Search** (noted as upcoming)
-- **Bidirectional BFS** algorithm
 
 ---
 
